@@ -1,0 +1,251 @@
+% This is a template presentation for computer chemistry class UZH Spring Semester 2017
+
+% change font size if needed:
+\documentclass[xcolor={dvipsnames},10pt]{beamer}
+
+% some definitions / defaults:
+\newcommand{\topic}[1]{\newcommand{\inserttopic}{#1}}
+\defbeamertemplate{description item}{align left}{\insertdescriptionitem\hfill}
+
+\mode<presentation>
+{
+    % themes and formatting specs:
+    \useinnertheme{circles}
+    \useoutertheme{default}
+    \usefonttheme{structurebold}
+    \hypersetup{
+        pdfpagelayout=OneColumn,
+        pdfview=Fit,
+        pdfstartview=Fit
+    }
+    \beamertemplatenavigationsymbolsempty
+    \setbeamertemplate{description item}[align left]
+
+    % format of frametitles
+    \setbeamertemplate{frametitle}
+    {
+        \vskip 7pt
+        \begin{beamercolorbox}[wd=\paperwidth]{frametitle}%
+            \begin{centering}
+                \usebeamerfont{frametitle}\insertframetitle\par
+                \usebeamerfont{framesubtitle}\insertframesubtitle\par
+                \rule[4mm]{\paperwidth}{1.5pt}
+            \end{centering}
+        \end{beamercolorbox}
+    }
+
+    % format and content of title page
+    \setbeamertemplate{title page}
+    {
+        \begin{beamercolorbox}[wd=\paperwidth,dp=2cm]{title}%
+            \begin{centering}
+                \rule[0mm]{\paperwidth}{1.5pt}
+                \usebeamerfont{title}
+                Computer Chemistry Class\par
+                \usebeamerfont{subtitle}
+                \insertsubtitle\par
+                \vspace{0.5cm}
+                {\footnotesize
+                    Spring Semester 2017\par
+                    \insertauthor\par
+                    \rule[2mm]{\paperwidth}{1.5pt}
+                }
+                {
+                    \usebeamercolor[fg]{normal text}
+                    \textnormal
+                    \inserttopic\par
+                }
+            \end{centering}
+        \end{beamercolorbox}
+    }
+
+    % how to display covered stuff
+    \setbeamercovered{invisible}
+
+    % colors and fonts
+    \setbeamercolor{structure}{bg=CadetBlue!30, fg=OliveGreen}
+    \setbeamercolor{block title}{use={structure},bg=structure.bg, fg=structure.fg}
+    \setbeamercolor{block title alerted}{use={structure},bg=structure.bg}
+    \setbeamercolor{block title example}{use={structure},fg=BlueViolet, bg=structure.bg}
+    \setbeamercolor{background canvas}{use={structure}, bg=structure.bg!20}
+    \setbeamercolor{titlelike}{use={background canvas},bg=background canvas.bg}
+    \setbeamercolor{block body}{use={structure},bg=structure.bg!50}
+    \setbeamercolor{block body alerted}{use={structure},bg=structure.bg!50}
+    \setbeamercolor{block body example}{use={structure},bg=structure.bg!50}
+    \setbeamercolor{alerted text}{fg=Orange}
+    \setbeamerfont{framesubtitle}{size=\small}
+}
+
+% packages to use:
+\usepackage[english]{babel}
+\usepackage{booktabs}
+\usepackage[latin1]{inputenc}
+\usepackage{times}
+\usepackage[T1]{fontenc}
+\usepackage{framed}
+
+% Title page:
+\subtitle{Tutorial day X}
+\topic{Geometry optimization\par
+    topic 2\par
+    topic 3\par
+topic 4}
+\author{Your~name}
+
+% If you wish to uncover everything in a step-wise fashion, uncomment
+% the following command:
+%\beamerdefaultoverlayspecification{<+->}
+\begin{document}
+
+\begin{frame}
+    \titlepage
+\end{frame}
+
+\begin{frame}{Title}{Optional Subtitle}
+    content
+\end{frame}
+
+\begin{frame}{Lists}
+    \begin{columns}[T,onlytextwidth]
+        \column{0.33\textwidth}
+        Items
+        \begin{itemize}
+            \item something \item something else
+        \end{itemize}
+
+        \column{0.33\textwidth}
+        Enumerations
+        \begin{enumerate}
+            \item First, \item Second and \item Last.
+        \end{enumerate}
+
+        \column{0.33\textwidth}
+        Descriptions
+        \begin{description}
+            \item[Gaussian] A code \item[GaussView] A GUI
+        \end{description}
+    \end{columns}
+\end{frame}
+
+
+\begin{frame}{Highlighting text}
+    Different ways to highlight text
+    \begin{itemize}
+        \item
+            \emph{emphasized} text
+        \item
+            \alert{alerted} text
+        \item
+            \textbf{bold} text
+        \item
+            \texttt{typewriter}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Math}
+    \begin{align*}
+        L' = {L}{\sqrt{1-\frac{v^2}{c^2}}}
+    \end{align*}
+\end{frame}
+
+\begin{frame}{Tables}
+
+    \begin{table}
+        \begin{tabular}{l*{6}{c}r}
+            \toprule
+            Team              & P & W & D & L & F  & A & Pts \\
+            \midrule
+            Manchester United & 6 & 4 & 0 & 2 & 10 & 5 & 12  \\
+            Celtic            & 6 & 3 & 0 & 3 &  8 & 9 &  9  \\
+            Benfica           & 6 & 2 & 1 & 3 &  7 & 8 &  7  \\
+            FC Copenhagen     & 6 & 2 & 1 & 3 &  5 & 8 &  7  \\
+            \bottomrule
+        \end{tabular}
+    \end{table}
+
+\end{frame}
+
+\begin{frame}{Figures}
+    \begin{figure}[ht!]
+        \centering
+        \includegraphics[width=\textwidth]{cat.jpg}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Columns}
+    \begin{columns}[c] % the "c" option specifies center vertical alignment
+        \column{.5\textwidth} % column designated by a command
+        Contents of the first column
+        \column{.5\textwidth}
+        Contents split \\ into two lines
+    \end{columns}
+\end{frame}
+
+\begin{frame}{Blocks}
+
+    \begin{block}{This is a Block}
+        This is important information
+    \end{block}
+
+    \begin{alertblock}{This is an Alert block}
+        This is an important alert
+    \end{alertblock}
+
+    \begin{exampleblock}{This is an Example block}
+        This is an example
+    \end{exampleblock}
+
+\end{frame}
+
+\begin{frame}{Boxes}
+    \fcolorbox{black}{white}{\parbox[b][6em][t]{0.2\textwidth}{Some \\ text} }
+    \fcolorbox{black}{white}{\parbox[c][5em][s]{0.3\textwidth}{Some \vfill other text} }
+    \fcolorbox{black}{white}{\parbox[t][4em][c]{0.4\textwidth}{Some \\ more text} }
+\end{frame}
+
+\begin{frame}[allowframebreaks]
+    \frametitle<presentation>{Bibliography}
+    \begin{thebibliography}{10}
+        \setbeamertemplate{bibliography item}[book]
+        \bibitem{Autor1990}
+        A.~Autor.
+        \newblock {\em Introduction to Giving Presentations}.
+        \newblock Klein-Verlag, 1990.
+        \setbeamertemplate{bibliography item}[article]
+        \bibitem{Jemand2000}
+        S.~Jemand.
+        \newblock On this and that.
+        \newblock {\em Journal of This and That}, 2(1):50--100, 2000.
+    \end{thebibliography}
+\end{frame}
+
+\begin{frame}{Overlays}
+    You can create overlays\dots
+    \begin{itemize}
+        \item using the \texttt{pause} command:
+            \begin{itemize}
+                \item
+                    First item.
+                    \pause
+                \item
+                    Second item.
+            \end{itemize}
+        \item
+            using overlay specifications:
+            \begin{itemize}
+                \item<3->
+                    First item.
+                \item<4->
+                    Second item.
+            \end{itemize}
+        \item
+            using the general \texttt{uncover} command:
+            \begin{itemize}
+                \uncover<5->{\item
+                First item.}
+                \uncover<6->{\item
+                Second item.}
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+\end{document}
