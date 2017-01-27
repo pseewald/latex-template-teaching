@@ -59,6 +59,9 @@
         \end{beamercolorbox}
     }
 
+    % display frame numbers
+    \setbeamertemplate{footline}[frame number]
+
     % how to display covered stuff
     \setbeamercovered{invisible}
 
@@ -97,7 +100,7 @@ topic 4}
 %\beamerdefaultoverlayspecification{<+->}
 \begin{document}
 
-\begin{frame}
+\begin{frame}[noframenumbering, plain]
     \titlepage
 \end{frame}
 
@@ -126,7 +129,6 @@ topic 4}
         \end{description}
     \end{columns}
 \end{frame}
-
 
 \begin{frame}{Highlighting text}
     Different ways to highlight text
