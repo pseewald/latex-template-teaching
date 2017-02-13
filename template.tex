@@ -86,6 +86,7 @@
 \usepackage{times}
 \usepackage[T1]{fontenc}
 \usepackage{framed}
+\usepackage[font=small]{caption}
 
 % Title page:
 \subtitle{Tutorial day X}
@@ -171,12 +172,13 @@ topic 4}
     \begin{figure}[ht!]
         \centering
         \includegraphics[width=\textwidth]{cat.jpg}
+        \caption{dead or alive?}
     \end{figure}
 \end{frame}
 
 \begin{frame}{Columns}
-    \begin{columns}[c] % the "c" option specifies center vertical alignment
-        \column{.5\textwidth} % column designated by a command
+    \begin{columns}[T,onlytextwidth]
+        \column{.5\textwidth}
         Contents of the first column
         \column{.5\textwidth}
         Contents split \\ into two lines
